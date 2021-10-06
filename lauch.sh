@@ -16,3 +16,5 @@ docker-compose up -d;
 
 #Install Service and route
 deck sync --state kong;
+
+
