@@ -13,7 +13,7 @@ services:
     image: kong
     command: kong migrations bootstrap
     networks:
-      - host
+      - kong-net
     depends_on:
       - db
     environment:
@@ -33,7 +33,7 @@ services:
     depends_on:
       - db
     networks:
-      - host
+      - kong-net
     environment:
       KONG_DATABASE: postgres
       KONG_PG_DATABASE: kong
@@ -68,7 +68,7 @@ services:
       - "8443:8443/tcp"
       - "127.0.0.1:8444:8444/tcp"
     networks: 
-      - host
+      - kong-net
     healthcheck:
       test: ["CMD", "kong", "health"]
       interval: 10s
@@ -96,7 +96,7 @@ services:
         condition: on-failure
     stdin_open: true
     networks: 
-      - host
+      - kong-net
     tty: true
     volumes:
       - kong_data:/var/lib/postgresql/data
