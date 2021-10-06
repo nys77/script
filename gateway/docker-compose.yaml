@@ -19,7 +19,7 @@ services:
       KONG_DATABASE: postgres
       KONG_PG_DATABASE: kong
       KONG_PG_HOST: 192.168.0.208
-       KONG_PG_PORT: 5432
+      KONG_PG_PORT: 5432
       KONG_PG_USER: kong
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
