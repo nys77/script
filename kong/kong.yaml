@@ -67,7 +67,7 @@ services:
 upstreams:
   - name: OpenAPI_definition
     targets:
-      - target: https://192.168.0.209:843/stokomani
+      - target: 192.168.0.209:843
         tags:
           - OAS3_import
           - OAS3file_stoko.json
