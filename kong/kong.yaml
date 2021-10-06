@@ -3,7 +3,7 @@ services:
   - name: OpenAPI_definition
     protocol: http
     host: OpenAPI_definition
-    port: 8088
+    port: 8080
     path: /stokomani
     plugins: []
     routes:
