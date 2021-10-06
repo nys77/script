@@ -67,7 +67,8 @@ services:
       - "8000:8000"
       - "8443:8443/tcp"
       - "127.0.0.1:8444:8444/tcp"
-    networks: host
+    networks: 
+      - host
     healthcheck:
       test: ["CMD", "kong", "health"]
       interval: 10s
@@ -94,7 +95,8 @@ services:
       restart_policy:
         condition: on-failure
     stdin_open: true
-    networks: host
+    networks: 
+      - host
     tty: true
     volumes:
       - kong_data:/var/lib/postgresql/data
