@@ -60,11 +60,6 @@ services:
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
       KONG_PG_PASSWORD: kong
-    ports:
-      - "127.0.0.1:8001:8001/tcp"
-      - "8000:8000"
-      - "8443:8443/tcp"
-      - "127.0.0.1:8444:8444/tcp"
     network_mode: "host"
     healthcheck:
       test: ["CMD", "kong", "health"]
