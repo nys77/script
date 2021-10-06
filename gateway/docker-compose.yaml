@@ -3,6 +3,11 @@ version: "3.7"
 volumes:
   kong_data: {}
 
+networks:
+  kong-net:
+    ipam:
+      driver: default
+
 services:    
   kong:
     image: kong
@@ -23,6 +28,8 @@ services:
       - "8000:8000"
       - "8443:8443/tcp"
       - "127.0.0.1:8444:8444/tcp"
+    network:
+      - kong-net
     healthcheck:
       test: ["CMD", "kong", "health"]
       interval: 10s
