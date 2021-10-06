@@ -4,7 +4,7 @@ services:
     protocol: http
     host: OpenAPI_definition
     port: 8080
-    path: /stokomani
+    path: /
     plugins: []
     routes:
       - tags:
@@ -14,7 +14,7 @@ services:
         methods:
           - GET
         paths:
-          - /carrier/declaration$
+          - /stokomani/carrier/declaration$
         strip_path: false
       - tags:
           - OAS3_import
@@ -23,7 +23,7 @@ services:
         methods:
           - PUT
         paths:
-          - /carrier/declaration$
+          - /stokomani/carrier/declaration$
         strip_path: false
       - tags:
           - OAS3_import
@@ -32,7 +32,7 @@ services:
         methods:
           - POST
         paths:
-          - /carrier/declaration$
+          - /stokomani/carrier/declaration$
         strip_path: false
       - tags:
           - OAS3_import
@@ -41,7 +41,7 @@ services:
         methods:
           - DELETE
         paths:
-          - /carrier/declaration$
+          - /stokomani/carrier/declaration$
         strip_path: false
       - tags:
           - OAS3_import
@@ -50,7 +50,7 @@ services:
         methods:
           - GET
         paths:
-          - /carrier/declaration/ping$
+          - /stokomani/carrier/declaration/ping$
         strip_path: false
       - tags:
           - OAS3_import
@@ -59,7 +59,7 @@ services:
         methods:
           - GET
         paths:
-          - /carrier/declaration/all$
+          - /stokomani/carrier/declaration/all$
         strip_path: false
     tags:
       - OAS3_import
