@@ -30,8 +30,6 @@ services:
   kong-migrations-up:
     image: kong
     command: kong migrations up && kong migrations finish
-    depends_on:
-      - db
     networks:
       - kong-net
     environment:
