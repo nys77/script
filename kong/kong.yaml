@@ -1,7 +1,7 @@
 _format_version: "1.1"
 services:
   - name: OpenAPI_definition
-    protocol: http
+    protocol: https
     host: OpenAPI_definition
     port: 8080
     path: /stokomani
@@ -67,7 +67,7 @@ services:
 upstreams:
   - name: OpenAPI_definition
     targets:
-      - target: https://lb-api-prod.intranet.stokomani.fr/stokomani
+      - target: https://lb-api-prod.intranet.stokomani.fr
         tags:
           - OAS3_import
           - OAS3file_stoko.json
