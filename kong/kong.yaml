@@ -3,7 +3,7 @@ services:
   - name: OpenAPI_definition
     protocol: https
     host: lb-api-prod.intranet.stokomani.fr
-    #port: 8443
+    port: 8443
     path: /
     plugins: []
     routes:
