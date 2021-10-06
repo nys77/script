@@ -70,8 +70,7 @@ services:
       - "8443:8443/tcp"
       - "127.0.0.1:8444:8444/tcp"
     networks:
-      kong-net:
-        ipv4_address: 172.31.0.10
+      - kong-net
     healthcheck:
       test: ["CMD", "kong", "health"]
       interval: 10s
@@ -99,8 +98,7 @@ services:
         condition: on-failure
     stdin_open: true
     networks:
-      kong-net:
-        ipv4_address: 172.31.0.5
+      - kong-net
     tty: true
     volumes:
       - kong_data:/var/lib/postgresql/data
