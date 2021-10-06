@@ -1,0 +1,76 @@
+_format_version: "1.1"
+services:
+  - name: OpenAPI_definition
+    protocol: http
+    host: OpenAPI_definition
+    port: 8088
+    path: /stokomani
+    plugins: []
+    routes:
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: OpenAPI_definition-getTruckDeclaration
+        methods:
+          - GET
+        paths:
+          - /carrier/declaration$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: OpenAPI_definition-putTruckDeclaration
+        methods:
+          - PUT
+        paths:
+          - /carrier/declaration$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: OpenAPI_definition-postTruckDeclaration
+        methods:
+          - POST
+        paths:
+          - /carrier/declaration$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: OpenAPI_definition-deleteTruckDeclaration
+        methods:
+          - DELETE
+        paths:
+          - /carrier/declaration$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: OpenAPI_definition-ping
+        methods:
+          - GET
+        paths:
+          - /carrier/declaration/ping$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: OpenAPI_definition-getTruckDeclarations
+        methods:
+          - GET
+        paths:
+          - /carrier/declaration/all$
+        strip_path: false
+    tags:
+      - OAS3_import
+      - OAS3file_stoko.json
+upstreams:
+  - name: OpenAPI_definition
+    targets:
+      - target: localhost:8088
+        tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+    tags:
+      - OAS3_import
+      - OAS3file_stoko.json
