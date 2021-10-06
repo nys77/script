@@ -28,7 +28,7 @@ services:
       - "8000:8000"
       - "8443:8443/tcp"
       - "127.0.0.1:8444:8444/tcp"
-    network:
+    networks:
       - kong-net
     healthcheck:
       test: ["CMD", "kong", "health"]
