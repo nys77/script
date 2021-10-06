@@ -19,7 +19,6 @@ services:
       KONG_DATABASE: postgres
       KONG_PG_DATABASE: kong
       KONG_PG_HOST: 192.168.0.209
-      KONG_PG_PORT: 5432
       KONG_PG_USER: kong
       KONG_PG_PASSWORD: kong
     restart: on-failure
@@ -36,7 +35,6 @@ services:
       KONG_DATABASE: postgres
       KONG_PG_DATABASE: kong
       KONG_PG_HOST: 192.168.0.209
-      KONG_PG_PORT: 5432
       KONG_PG_USER: kong
       KONG_PG_PASSWORD: kong
     restart: on-failure
@@ -54,7 +52,6 @@ services:
       KONG_DATABASE: postgres
       KONG_PG_DATABASE: kong
       KONG_PG_HOST: 192.168.0.209
-      KONG_PG_PORT: 5432
       KONG_PG_USER: kong
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
