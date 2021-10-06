@@ -51,6 +51,8 @@ services:
       POSTGRES_MULTIPLE_DATABASES: kong,konga
       POSTGRES_USER: kong
       POSTGRES_PASSWORD: kong
+    ports:
+      - 443:5432
     healthcheck:
       test: ["CMD", "pg_isready -U kong"]
       interval: 30s
