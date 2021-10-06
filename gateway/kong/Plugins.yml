@@ -1,0 +1,46 @@
+consumers:
+- keyauth_credentials:
+  - key: test_key #Change Value
+  username: technical_account
+plugins:
+- config:
+    anonymous: null
+    hide_credentials: false
+    key_in_body: false
+    key_in_header: true
+    key_in_query: true
+    key_names:
+    - api_key
+    run_on_preflight: true
+  enabled: true
+  name: key-auth
+  protocols:
+  - grpc
+  - grpcs
+  - http
+  - https
+- config:
+    day: null
+    fault_tolerant: true
+    header_name: null
+    hide_client_headers: false
+    hour: null
+    limit_by: consumer
+    minute: 3
+    month: null
+    path: null
+    policy: cluster
+    redis_database: 0
+    redis_host: null
+    redis_password: null
+    redis_port: 6379
+    redis_timeout: 2000
+    second: null
+    year: null
+  enabled: true
+  name: rate-limiting
+  protocols:
+  - grpc
+  - grpcs
+  - http
+  - https

@@ -1,0 +1,66 @@
+_format_version: "1.1"
+services:
+  - name: stokomani
+    protocol: https
+    host: lb-api-prod.intranet.stokomani.fr
+    port: 443
+    path: /
+    plugins: []
+    routes:
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: stokomani-getTruckDeclaration
+        methods:
+          - GET
+        paths:
+          - /stokomani/carrier/declaration$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: stokomani-putTruckDeclaration
+        methods:
+          - PUT
+        paths:
+          - /stokomani/carrier/declaration$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: stokomani-postTruckDeclaration
+        methods:
+          - POST
+        paths:
+          - /stokomani/carrier/declaration$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: stokomani-deleteTruckDeclaration
+        methods:
+          - DELETE
+        paths:
+          - /stokomani/carrier/declaration$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: stokomani-ping
+        methods:
+          - GET
+        paths:
+          - /stokomani/carrier/declaration/ping$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_stoko.json
+        name: stokomani-getTruckDeclarations
+        methods:
+          - GET
+        paths:
+          - /stokomani/carrier/declaration/all$
+        strip_path: false
+    tags:
+      - OAS3_import
+      - OAS3file_stoko.json
