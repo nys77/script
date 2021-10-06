@@ -51,7 +51,7 @@ services:
       POSTGRES_MULTIPLE_DATABASES: kong,konga
       POSTGRES_USER: kong
       POSTGRES_PASSWORD: kong
-    ports:
+    expose:
       - "443"
     healthcheck:
       test: ["CMD", "pg_isready -U kong"]
