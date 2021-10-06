@@ -12,3 +12,7 @@ chmod +x deck.sh;
 #Lancer le docker compose
 docker-compose build;
 docker-compose up -d;
+
+
+#Install Service and route
+deck sync --state kong;

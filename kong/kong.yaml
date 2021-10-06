@@ -67,7 +67,7 @@ services:
 upstreams:
   - name: OpenAPI_definition
     targets:
-      - target: 192.168.0.210:443
+      - target: https://LB-API-PROD.intranet.stokomani.fr:443
         tags:
           - OAS3_import
           - OAS3file_stoko.json
