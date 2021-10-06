@@ -1,16 +1,16 @@
 _format_version: "1.1"
 services:
-  - name: OpenAPI_definition
-    protocol: http
-    host: OpenAPI_definition
-    port: 8080
+  - name: stokomani
+    protocol: https
+    host: lb-api-prod.intranet.stokomani.fr
+    port: 443
     path: /
     plugins: []
     routes:
       - tags:
           - OAS3_import
           - OAS3file_stoko.json
-        name: OpenAPI_definition-getTruckDeclaration
+        name: stokomani-getTruckDeclaration
         methods:
           - GET
         paths:
@@ -19,7 +19,7 @@ services:
       - tags:
           - OAS3_import
           - OAS3file_stoko.json
-        name: OpenAPI_definition-putTruckDeclaration
+        name: stokomani-putTruckDeclaration
         methods:
           - PUT
         paths:
@@ -28,7 +28,7 @@ services:
       - tags:
           - OAS3_import
           - OAS3file_stoko.json
-        name: OpenAPI_definition-postTruckDeclaration
+        name: stokomani-postTruckDeclaration
         methods:
           - POST
         paths:
@@ -37,7 +37,7 @@ services:
       - tags:
           - OAS3_import
           - OAS3file_stoko.json
-        name: OpenAPI_definition-deleteTruckDeclaration
+        name: stokomani-deleteTruckDeclaration
         methods:
           - DELETE
         paths:
@@ -46,7 +46,7 @@ services:
       - tags:
           - OAS3_import
           - OAS3file_stoko.json
-        name: OpenAPI_definition-ping
+        name: stokomani-ping
         methods:
           - GET
         paths:
@@ -55,22 +55,12 @@ services:
       - tags:
           - OAS3_import
           - OAS3file_stoko.json
-        name: OpenAPI_definition-getTruckDeclarations
+        name: stokomani-getTruckDeclarations
         methods:
           - GET
         paths:
           - /stokomani/carrier/declaration/all$
         strip_path: false
-    tags:
-      - OAS3_import
-      - OAS3file_stoko.json
-upstreams:
-  - name: OpenAPI_definition
-    targets:
-      - target: lb-api-prod.intranet.stokomani.fr
-        tags:
-          - OAS3_import
-          - OAS3file_stoko.json
     tags:
       - OAS3_import
       - OAS3file_stoko.json
