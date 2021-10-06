@@ -8,7 +8,44 @@ networks:
     ipam:
       driver: default
 
-services:    
+services:
+
+  kong-migrations:
+    image: kong
+    command: kong migrations bootstrap
+    networks:
+      - kong-net
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_DATABASE: kong
+      KONG_PG_HOST: 192.168.0.209
+      KONG_PG_PORT: 5432
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong
+    restart: on-failure
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  kong-migrations-up:
+    image: kong
+    command: kong migrations up && kong migrations finish
+    depends_on:
+      - db
+    networks:
+      - kong-net
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_DATABASE: kong
+      KONG_PG_HOST: 192.168.0.209
+      KONG_PG_PORT: 5432
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong
+    restart: on-failure
+    deploy:
+      restart_policy:
+        condition: on-failure
+
   kong:
     image: kong
     user: kong
