@@ -6,13 +6,14 @@ volumes:
 networks:
   kong-net:
     ipam:
-      driver: host
+      driver: default
 
 services:    
   kong-migrations:
     image: kong
     command: kong migrations bootstrap
-    network_mode: "host"
+    networks:
+      - kong-net
     depends_on:
       - db
     environment:
@@ -31,7 +32,8 @@ services:
     command: kong migrations up && kong migrations finish
     depends_on:
       - db
-    network_mode: "host"
+    networks:
+      - kong-net
     environment:
       KONG_DATABASE: postgres
       KONG_PG_DATABASE: kong
@@ -60,7 +62,13 @@ services:
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
       KONG_PG_PASSWORD: kong
-    network_mode: "host"
+    ports:
+      - "127.0.0.1:8001:8001/tcp"
+      - "8000:8000"
+      - "8443:8443/tcp"
+      - "127.0.0.1:8444:8444/tcp"
+    networks:
+      - kong-net
     healthcheck:
       test: ["CMD", "kong", "health"]
       interval: 10s
@@ -87,7 +95,8 @@ services:
       restart_policy:
         condition: on-failure
     stdin_open: true
-    network_mode: "host"
+    networks:
+      - kong-net
     tty: true
     volumes:
       - kong_data:/var/lib/postgresql/data
