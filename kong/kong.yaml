@@ -2,7 +2,7 @@ _format_version: "1.1"
 services:
   - name: OpenAPI_definition
     protocol: https
-    host: OpenAPI_definition
+    host: lb-api-prod.intranet.stokomani.fr
     #port: 8443
     path: /
     plugins: []
@@ -67,7 +67,7 @@ services:
 upstreams:
   - name: OpenAPI_definition
     targets:
-      - target: lb-api-prod.intranet.stokomani.fr
+      - target: 192.168.0.210
         tags:
           - OAS3_import
           - OAS3file_stoko.json
