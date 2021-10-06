@@ -6,9 +6,7 @@ volumes:
 networks:
   kong-net:
     ipam:
-      driver: default
-      config:
-        - subnet: 172.31.0.0/16
+      driver: host
 
 services:    
   kong-migrations:
