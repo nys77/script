@@ -3,7 +3,7 @@ services:
   - name: OpenAPI_definition
     protocol: https
     host: lb-api-prod.intranet.stokomani.fr
-    port: 8443
+    #port: 8443
     path: /
     plugins: []
     routes:
@@ -67,7 +67,7 @@ services:
 upstreams:
   - name: OpenAPI_definition
     targets:
-      - target: 192.168.0.210
+      - target: lb-api-prod.intranet.stokomani.fr
         tags:
           - OAS3_import
           - OAS3file_stoko.json
