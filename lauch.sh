@@ -22,3 +22,8 @@ chmod +x curl.sh;
 deck sync --state kong;
 
 
+#Lauch the test
+chmod +x test.sh;
+./test.sh
+
+
