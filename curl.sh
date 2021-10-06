@@ -4,7 +4,7 @@
 curl -i -X POST \
   --url http://localhost:8001/services/ \
   --data 'name=stokomani' \
-  --data 'url=https://lb-api-prod.intranet.stokomani.fr' 
+  --data 'url=https://lb-api-prod.intranet.stokomani.fr/stokomani/carrier/declaration/ping' 
 
 curl -i -X POST \
   --url http://localhost:8001/services/stokomani/routes \
